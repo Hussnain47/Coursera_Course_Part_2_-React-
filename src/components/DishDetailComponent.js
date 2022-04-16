@@ -18,6 +18,7 @@ import {
 import { Loading } from "./LoadingComponent";
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../shared/baseUrl";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -137,7 +138,12 @@ function RenderDish({ dish }) {
   return (
     <div>
       <Card onClick={() => this.onDishSelect(dish)}>
-        <CardImg width="100%" object src={dish.image} alt={dish.name} />
+        <CardImg
+          width="100%"
+          object
+          src={baseUrl + dish.image}
+          alt={dish.name}
+        />
 
         <CardBody>
           <CardTitle>{dish.name}</CardTitle>
