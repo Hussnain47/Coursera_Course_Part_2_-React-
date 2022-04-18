@@ -7,7 +7,6 @@ export const Comments = (
   },
   action
 ) => {
-  console.log("here");
   switch (action.type) {
     case ActionTypes.ADD_COMMENTS:
       return {
